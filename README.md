@@ -3,8 +3,7 @@
 Code and scripts accompanying the analyses reported in:
 
 **Navigational Affordances Revisited: Contrasting Path, Surface, and Locomotive Action Representations in the Human Visual System**  
-*Author list TBD*  
-*Journal / preprint TBD*
+*Bartnik, C. G. & Groen, I. I. A.*  
 
 ---
 
