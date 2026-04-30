@@ -83,31 +83,33 @@ FMRI_STIM_ORDERING = [
 # ==========================================================
 # File paths (your originals, centralized)
 # ==========================================================
+DATA_PATH = "/home/cle/projects/PhD/navigational_affordances_revisited/DATA/"
+
 PATH_BEHAVIOR_ACTION_RDMs = (
-    "/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_behavior/"
-    "VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
+    DATA_PATH + 
+    "VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
 )
 
 PATH_EEG_ACTION_AVG = (
-    "/home/clemens-uva/Github_repos/EEG/DATA/Behavioral_annotations/RDMs/"
-    "action_average_RDM_euclidean.npy"
+    DATA_PATH +
+    "Behavioral_annotations/RDMs/action_average_RDM_euclidean.npy"
 )
 
 BEHAVIOR_MODEL_RDM_PATHS = {
     "Loc. Affordance(EEG)": PATH_EEG_ACTION_AVG,
-    "GIST": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/GIST_265_EEG_euclidean.npy",
-    "Start Point": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/start_point_EEG_euc.npy",
-    "Goal Point": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/end_point_EEG_euc.npy",
-    "Mean path": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy",
-    "3 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/three_region_EEG_euc.npy",
-    "8 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_8_EEG_euc.npy",
-    "180 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_180_EEG_euc.npy",
-    "Floor": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy",
+    "GIST": DATA_PATH + "RDMs/GIST_265_EEG_euclidean.npy",
+    "Start Point": DATA_PATH + "RDMs/start_point_EEG_euc.npy",
+    "Goal Point": DATA_PATH + "RDMs/end_point_EEG_euc.npy",
+    "Mean path": DATA_PATH + "RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy",
+    "3 Bins": DATA_PATH + "RDMs/three_region_EEG_euc.npy",
+    "8 Bins": DATA_PATH + "RDMs/angular_bins_8_EEG_euc.npy",
+    "180 Bins": DATA_PATH + "RDMs/angular_bins_180_EEG_euc.npy",
+    "Floor": DATA_PATH + "RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy",
 }
 
 ROI_ORDER = ["PPA_mean", "OPA_mean", "RSC_mean", "V1"]
-ROI_FMRI_AVG_DIR = "/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_brain_data/average"
-V1_RDM_PATH = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/ROI_RDMs/mean_all_sub_rdm_V1_metric-correlation.npy"
+ROI_FMRI_AVG_DIR = DATA_PATH + "VISACT_brain_data/average"
+V1_RDM_PATH = DATA_PATH + "ROI_RDMs/mean_all_sub_rdm_V1_metric-correlation.npy"
 
 
 # ==========================================================

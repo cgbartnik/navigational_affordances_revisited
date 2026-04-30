@@ -102,37 +102,45 @@ indoor_images = [img for img in EEG_list_action_sorted if img.startswith('indoor
 
 # Path related
 
-mean_path_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy")
-three_bin_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/three_region_EEG_euc.npy")
-angular_8_bin_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_8_EEG_euc.npy")
-angular_180_bin_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_180_EEG_euc.npy")
+DATA_PATH = "/home/cle/projects/PhD/navigational_affordances_revisited/DATA/"
 
-start_point_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/start_point_EEG_euc.npy")
-end_point_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/end_point_EEG_euc.npy")
-floor_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy")
-SC_mean_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/rdm_sc_mean_euc_EEG.npy")
-CE_mean_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/rdm_ce_mean_euc_EEG.npy")
-ce_sc_both = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/rdm_both_ce_sc_euc_EEG.npy")
+#EEG Data
+DATA_path = "/home/cle/projects/PhD/EEG_Temporal_misalignment/Additional_experimental_files/preprocessed_data/"
+
+#EEG sliding window
+DATA_path_sliding = "/home/cle/projects/PhD/EEG_Temporal_misalignment/Additional_experimental_files/ERP_sliding_window_RDMs/"
+
+mean_path_euc = np.load(DATA_PATH + "RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy")
+three_bin_euc = np.load(DATA_PATH + "RDMs/three_region_EEG_euc.npy")
+angular_8_bin_euc = np.load(DATA_PATH + "RDMs/angular_bins_8_EEG_euc.npy")
+angular_180_bin_euc = np.load(DATA_PATH + "RDMs/angular_bins_180_EEG_euc.npy")
+
+start_point_euc = np.load(DATA_PATH + "RDMs/start_point_EEG_euc.npy")
+end_point_euc = np.load(DATA_PATH + "RDMs/end_point_EEG_euc.npy")
+floor_euc = np.load(DATA_PATH + "RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy")
+SC_mean_euc = np.load(DATA_PATH + "RDMs/rdm_sc_mean_euc_EEG.npy")
+CE_mean_euc = np.load(DATA_PATH + "RDMs/rdm_ce_mean_euc_EEG.npy")
+ce_sc_both = np.load(DATA_PATH + "RDMs/rdm_both_ce_sc_euc_EEG.npy")
 
 # Behavior
 metric = "euclidean"
 
-action_eeg_rdm = np.load(f"/home/clemens-uva/Github_repos/EEG/DATA/Behavioral_annotations/RDMs/action_average_RDM_{metric}.npy")
-object_eeg_rdm = np.load(f"/home/clemens-uva/Github_repos/EEG/DATA/Behavioral_annotations/RDMs/object_average_RDM_{metric}.npy")
+action_eeg_rdm = np.load(f"{DATA_PATH}Behavioral_annotations/RDMs/action_average_RDM_{metric}.npy")
+object_eeg_rdm = np.load(f"{DATA_PATH}Behavioral_annotations/RDMs/object_average_RDM_{metric}.npy")
 
-action_online_rdm = np.load(f"/home/clemens-uva/Github_repos/EEG/EEG_final/Model_RDMS/online_action_rdm_EGG_action_sorted_{metric}.npy")
-object_online_rdm = np.load(f"/home/clemens-uva/Github_repos/EEG/EEG_final/Model_RDMS/online_object_rdm_EGG_action_sorted_{metric}.npy")
+action_online_rdm = np.load(f"{DATA_PATH}Model_RDMS/online_action_rdm_EGG_action_sorted_{metric}.npy")
+object_online_rdm = np.load(f"{DATA_PATH}Model_RDMS/online_object_rdm_EGG_action_sorted_{metric}.npy")
 
 
 images_name = [x.replace("_", "") for x in EEG_list_action_sorted]
 
-fmri_action = load_and_sort_rdm("/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz", images_name, compressed=True)
+fmri_action = load_and_sort_rdm(DATA_PATH + "VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz", images_name, compressed=True)
 
 
-GIST_265 = load_and_sort_rdm('/home/clemens-uva/Github_repos/Visact_fMRI/fMRI_folder/VISACT_RDM_collection/GIST/VISACT_fMRI/GIST_256_RDM_fMRI.npy', images_name)
+GIST_265 = load_and_sort_rdm(DATA_PATH + 'GIST/VISACT_fMRI/GIST_256_RDM_fMRI.npy', images_name)
 
-Gist_euc = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/GIST_265_EEG_euclidean.npy")
-Gist_corr = np.load("/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/GIST_265_EEG_correlation.npy")
+Gist_euc = np.load(DATA_PATH + "RDMs/GIST_265_EEG_euclidean.npy")
+Gist_corr = np.load(DATA_PATH + "RDMs/GIST_265_EEG_correlation.npy")
 
 
 
@@ -152,8 +160,6 @@ participants_list = ['sapaj', 'ppnjn', 'azrfp', 'cuvfl', 'domdz', 'npcrj', 'hoxe
 
 
 #####
-# Path to preprocessed data 
-DATA_path = "/home/clemens-uva/Github_repos/EEG/EEG_final/DATA/75_downsample128/"
 
 file_substring = sorted(os.listdir(DATA_path))[0]
 
@@ -203,7 +209,7 @@ def corr_with_model(rdm1, model_rdm):
 
 
 def compute_corrs_sliding(distance_metric, n, model_rdm):
-    path = "/home/clemens-uva/Desktop/EEG---temporal-dynamics-of-affordance-perception/RDMs/ERP_sliding_window_RDMs/"
+    path = DATA_path_sliding
 
     all_sub_corrs = []
     for file in os.listdir(path):
@@ -314,7 +320,7 @@ def corr_with_model_subset(rdm1, model_rdm, subset_image_list):
 
 
 def compute_corrs_sliding_subset(distance_metric, n, model_rdm, subset_image_list):
-    path = "/home/clemens-uva/Desktop/EEG---temporal-dynamics-of-affordance-perception/RDMs/ERP_sliding_window_RDMs/"
+    path = DATA_path_sliding
 
     all_sub_corrs = []
     for file in os.listdir(path):
@@ -395,14 +401,14 @@ plot_correlation_comparison_subset(spaces = [action_eeg_rdm, fmri_action, Gist_e
                             colors = ["#ff2c55","#f54f8e", "#ee9b00"],
                             names = ["Loc. Aff (EGG)", "Loc. Aff (fMRI)", "GIST"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_all_Gist_euc_all_images.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_all_Gist_euc_all_images.png",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [action_eeg_rdm, fmri_action, Gist_euc],
                             colors = ["#ff2c55","#f54f8e", "#ee9b00"],
                             names = ["Loc. Aff (EGG)", "Loc. Aff (fMRI)", "GIST"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_all_Gist_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_all_Gist_euc_indoor.png",
                             ref_peaks=False)
 
 '''
@@ -410,14 +416,14 @@ plot_correlation_comparison_subset(spaces = [action_eeg_rdm, Gist_euc],
                             colors = ["#ff2c55", "#ee9b00"],
                             names = ["Loc. Aff","GIST"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_Gist_euc_all_images.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_Gist_euc_all_images.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [action_eeg_rdm, Gist_euc],
                             colors = ["#ff2c55", "#ee9b00"],
                             names = ["Loc. Aff","GIST"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_Gist_euc_all_images.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_Gist_euc_all_images.png",
                             ref_peaks=False)
 
 
@@ -425,14 +431,14 @@ plot_correlation_comparison_subset(spaces = [action_eeg_rdm, Gist_euc],
                             colors = ["#ff2c55", "#ee9b00"],
                             names = ["Loc. Aff","GIST"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_Gist_euc_indoor.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_Gist_euc_indoor.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [action_eeg_rdm, Gist_euc],
                             colors = ["#ff2c55", "#ee9b00"],
                             names = ["Loc. Aff","GIST"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/Affordance_Gist_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/Affordance_Gist_euc_indoor.png",
                             ref_peaks=False)
 
 
@@ -444,14 +450,14 @@ plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                              colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_all_images.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_all_images.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                             colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_all_images.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_all_images.png",
                             ref_peaks=False)
 
 
@@ -461,14 +467,14 @@ plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                              colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_indoor.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_indoor.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                             colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_indoor.png",
                             ref_peaks=False)
 
 
@@ -476,14 +482,14 @@ plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                              colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_indoor.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_indoor.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [start_point_euc, end_point_euc],
                             colors = ["#03c042","#7e1db6"],
                             names = [ "Start Point", " End Point"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/start_goal_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/start_goal_euc_indoor.png",
                             ref_peaks=False)
 
 
@@ -493,14 +499,14 @@ plot_correlation_comparison_subset(spaces = [mean_path_euc, three_bin_euc,  angu
                              colors = ['#052f77',  "#7b91b8", "#0dc0d4", "#38fff5" ],
                             names = ["Mean Path", "3 Bins", "8 Bins", "180 Bins"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/mean_path_euc_all_images.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/mean_path_euc_all_images.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [mean_path_euc, three_bin_euc,  angular_8_bin_euc, angular_180_bin_euc],
                             colors = ['#052f77',  "#7b91b8", "#0dc0d4", "#38fff5" ],
                             names = ["Mean Path", "3 Bins", "8 Bins", "180 Bins"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/mean_path_euc_all_images.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/mean_path_euc_all_images.png",
                             ref_peaks=False)
 
 
@@ -508,14 +514,14 @@ plot_correlation_comparison_subset(spaces = [mean_path_euc, three_bin_euc,  angu
                              colors = ['#052f77',  "#7b91b8", "#0dc0d4", "#38fff5" ],
                             names = ["Mean Path", "3 Bins", "8 Bins", "180 Bins"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/mean_path_euc_indoor.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/mean_path_euc_indoor.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [mean_path_euc, three_bin_euc,  angular_8_bin_euc, angular_180_bin_euc],
                             colors = ['#052f77',  "#7b91b8", "#0dc0d4", "#38fff5" ],
                             names = ["Mean Path", "3 Bins", "8 Bins", "180 Bins"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/mean_path_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/mean_path_euc_indoor.png",
                             ref_peaks=False)
 
 
@@ -524,14 +530,14 @@ plot_correlation_comparison_subset(spaces = [floor_euc],
                             colors = ["#42078f"],
                             names = ["Floor"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/floor_euc_all_images.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/floor_euc_all_images.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [floor_euc],
                             colors = ["#42078f"],
                             names = ["Floor"],
                             subset_image_list=EEG_list_action_sorted,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/floor_euc_all_images.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/floor_euc_all_images.png",
                             ref_peaks=False)
 
 
@@ -539,14 +545,14 @@ plot_correlation_comparison_subset(spaces = [floor_euc],
                             colors = ["#42078f"],
                             names = ["Floor"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/floor_euc_indoor.svg",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/floor_euc_indoor.svg",
                             ref_peaks=False)
 
 plot_correlation_comparison_subset(spaces = [floor_euc],
                             colors = ["#42078f"],
                             names = ["Floor"],
                             subset_image_list=indoor_images,
-                            save_path = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/Figures/floor_euc_indoor.png",
+                            save_path = "/home/cle/projects/PhD/navigational_affordances_revisited/Figures/floor_euc_indoor.png",
                             ref_peaks=False)
 
                             '''

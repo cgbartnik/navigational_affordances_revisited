@@ -87,24 +87,29 @@ FMRI_STIM_ORDERING = [
 ]
 
 
+
 # -----------------------------
 # Paths (edit these if needed)
 # -----------------------------
+
+
+DATA_PATH = "/home/cle/projects/PhD/navigational_affordances_revisited/DATA/"
+
 PATH_FMRI_BEHAVIOR_ACTION_NPZ = (
-    "/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_behavior/"
-    "VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
+    DATA_PATH + 
+    "VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
 )
 
 RDM_FILES = {
-    "Affordance(EEG)": "/home/clemens-uva/Github_repos/EEG/DATA/Behavioral_annotations/RDMs/action_average_RDM_euclidean.npy",
-    "GIST": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/GIST_265_EEG_euclidean.npy",
-    "Start Point": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/start_point_EEG_euc.npy",
-    "Goal Point": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/end_point_EEG_euc.npy",
-    "Mean path": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy",
-    "3 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/three_region_EEG_euc.npy",
-    "8 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_8_EEG_euc.npy",
-    "180 Bins": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_180_EEG_euc.npy",
-    "Floor": "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy",
+    "Affordance(EEG)": DATA_PATH + "RDMs/action_average_RDM_euclidean.npy",
+    "GIST": DATA_PATH + "RDMs/GIST_265_EEG_euclidean.npy",
+    "Start Point": DATA_PATH + "RDMs/start_point_EEG_euc.npy",
+    "Goal Point": DATA_PATH + "RDMs/end_point_EEG_euc.npy",
+    "Mean path": DATA_PATH + "RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy",
+    "3 Bins": DATA_PATH + "RDMs/three_region_EEG_euc.npy",
+    "8 Bins": DATA_PATH + "RDMs/angular_bins_8_EEG_euc.npy",
+    "180 Bins": DATA_PATH + "RDMs/angular_bins_180_EEG_euc.npy",
+    "Floor": DATA_PATH + "RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy",
 }
 
 

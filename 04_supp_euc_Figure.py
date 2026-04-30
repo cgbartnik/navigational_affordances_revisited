@@ -96,22 +96,24 @@ EEG_LIST_ACTION_SORTED = [
 # Config (edit these paths)
 # ----------------------------
 
+DATA_PATH = "/home/cle/projects/PhD/navigational_affordances_revisited/DATA/"
+
 @dataclass(frozen=True)
 class Paths:
-    fmri_behavior_action_npz: str = "/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
-    fmri_behavior_object_npz: str = "/home/clemens-uva/Github_repos/Visact_fMRI/code/VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_object_rdms.npz"
+    fmri_behavior_action_npz: str = DATA_PATH + "VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_action_rdms.npz"
+    fmri_behavior_object_npz: str = DATA_PATH + "VISACT_behavior/VISACT_fmri_behavior/fmri_behavior_object_rdms.npz"
 
-    eeg_action_avg_rdm: str = "/home/clemens-uva/Github_repos/EEG/DATA/Behavioral_annotations/RDMs/action_average_RDM_euclidean.npy"
-    gist_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/GIST_265_EEG_euclidean.npy"
-    start_point_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/start_point_EEG_euc.npy"
-    goal_point_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/end_point_EEG_euc.npy"
-    mean_path_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy"
-    three_bins_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/three_region_EEG_euc.npy"
-    eight_bins_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_8_EEG_euc.npy"
-    oneeighty_bins_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/angular_bins_180_EEG_euc.npy"
-    floor_rdm: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy"
+    eeg_action_avg_rdm: str = DATA_PATH + "Behavioral_annotations/RDMs/action_average_RDM_euclidean.npy"
+    gist_rdm: str = DATA_PATH + "RDMs/GIST_265_EEG_euclidean.npy"
+    start_point_rdm: str = DATA_PATH + "RDMs/start_point_EEG_euc.npy"
+    goal_point_rdm: str = DATA_PATH + "RDMs/end_point_EEG_euc.npy"
+    mean_path_rdm: str = DATA_PATH + "RDMs/mean_path_20_20_tiles_euclidean_EEG_sorted.npy"
+    three_bins_rdm: str = DATA_PATH + "RDMs/three_region_EEG_euc.npy"
+    eight_bins_rdm: str = DATA_PATH + "RDMs/angular_bins_8_EEG_euc.npy"
+    oneeighty_bins_rdm: str = DATA_PATH + "RDMs/angular_bins_180_EEG_euc.npy"
+    floor_rdm: str = DATA_PATH + "RDMs/floor_20_20_tiles_euclidean_EEG_sorted.npy"
 
-    roi_dir: str = "/home/clemens-uva/Desktop/XAI---locomotive-affordance-perception/ROI_RDMs"
+    roi_dir: str = DATA_PATH + "ROI_RDMs"
     # expected filenames inside roi_dir:
     # mean_all_sub_rdm_PPA_metric-euclidean.npy
     # mean_all_sub_rdm_OPA_metric-euclidean.npy
